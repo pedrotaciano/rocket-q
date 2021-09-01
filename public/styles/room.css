@@ -92,8 +92,8 @@
 }
 
 /* Questions */
-#questions {
-    margin-bottom: 10rem;
+#questions .questions:last-child {
+    margin-bottom: 3rem;
 }
 
 .question-wrapper {
@@ -138,6 +138,11 @@
 .question-wrapper .actions > a {
     display: flex;
     align-items: center;
+}
+
+.question-wrapper .actions .check, 
+.question-wrapper .actions .delete {
+    cursor: pointer;
 }
 
 .question-wrapper .actions > a > img {
