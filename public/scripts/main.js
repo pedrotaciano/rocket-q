@@ -38,3 +38,22 @@ function handleClick(event, check = true) {
     // abre a modal
     modal.open()
 }
+
+const copyButton = document.querySelector('.buttons .copy')
+copyButton.addEventListener("click", () => copy())
+
+// copia o id da sala para clipboard
+function copy() {
+    /* Get the text field */
+    var copyText = document.getElementById("room-id");
+  
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  
+     /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText.value);
+  
+    /* Alert the copied text */
+    alert("Número da sala copiado");
+  }

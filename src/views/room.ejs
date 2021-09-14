@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="/styles/modal.css">
 
         <!-- Script -->
-        <script src="scripts/main.js" defer type="module"></script>
+        <script src="/scripts/main.js" defer type="module"></script>
 
     </head> 
         <body>
@@ -25,11 +25,11 @@
                     </a>
 
                     <div class="buttons">
-                        <div class="button outlined" id="room-id" data-id="<%= roomId %>">
+                        <div class="button outlined copy" id="room-id" data-id="<%= roomId %>">
                             #<%= roomId %>
                             <img src="/images/copy.svg" alt="Copiar código da sala">
                         </div>
-                        <a href="#" class="button">
+                        <a href="/create-room" class="button">
                             <img src="/images/users-white.svg" alt="Criar sala">
                             Criar sala
                         </a>
@@ -54,6 +54,10 @@
                     <section id="questions">
                         <h2 class="sr-only">Perguntas da comunidade</h2>
                         <div class="questions">
+
+                            <% if(!isQuestions) { %>
+                                <%- include('parts/no-question') %>
+                            <% } %> 
 
                             <% questions.forEach(question => { %>
 
